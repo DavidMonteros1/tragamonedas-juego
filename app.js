@@ -10,15 +10,18 @@ window.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById("password").value.trim();
     const errorDisplay = document.getElementById("login-error");
 
+    console.log("Intentando login con:", username, password);
+
     const { data, error } = await supabase
       .from("usuarios")
       .select("*")
       .eq("nombre_usuario", username)
-      .eq("contrasena", password)
+      .eq("contrasena", password)  // <-- Escrito a mano sin ñ
       .single();
 
     if (error || !data) {
       errorDisplay.textContent = "Usuario o contraseña incorrectos.";
+      console.error("Error en login:", error);
       return;
     }
 
