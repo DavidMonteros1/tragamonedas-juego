@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juega Virtual Argentina 🎰</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🎰 Juega Virtual Argentina 🎰</h1>
+
+  <!-- Login -->
+  <div id="login">
+    <input type="text" id="username" placeholder="Nombre de usuario" />
+    <input type="password" id="password" placeholder="Contraseña" />
+    <button onclick="login()">Ingresar</button>
+    <p id="login-error"></p>
+  </div>
+
+  <!-- Lobby -->
+  <div id="lobby" style="display: none;">
+    <p><strong>Bienvenido,</strong> <span id="nombre-usuario"></span></p>
+    <p><strong>Fichas:</strong> <span id="saldo-fichas"></span></p>
+    <button onclick="irAJuego('tragamonedas')">Entrar a Tragamonedas</button>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <!-- Juego Tragamonedas -->
+  <div id="juego-tragamonedas" style="display: none;">
+    <h2>🎰 Tragamonedas 🎰</h2>
+    <input type="number" id="fichas-apuesta" placeholder="Fichas a apostar" min="1" />
+    <button onclick="jugar()">Girar</button>
+
+    <div class="slot-container">
+      <div class="slot" id="slot1">❔</div>
+      <div class="slot" id="slot2">❔</div>
+      <div class="slot" id="slot3">❔</div>
+    </div>
+
+    <p id="resultado"></p>
+    <button onclick="cerrarSesion()">Cerrar sesión</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

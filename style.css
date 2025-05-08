@@ -1,0 +1,69 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 0;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 1rem;
+    border: 1px solid #999;
+    border-radius: 5px;
+  }
+  
+  button {
+    background-color: #0077cc;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #005fa3;
+  }
+  
+  .slot-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .slot {
+    width: 80px;
+    height: 80px;
+    border: 2px solid #333;
+    margin: 0 10px;
+    line-height: 80px;
+    background-color: #fff;
+    font-size: 2rem;
+    border-radius: 10px;
+  }
+  
+  #login, #lobby, #juego-tragamonedas {
+    max-width: 400px;
+    margin: 0 auto 40px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 10px 0;
+  }
+  
+  #login-error {
+    color: red;
+  }
+  
