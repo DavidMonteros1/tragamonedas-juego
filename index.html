@@ -14,7 +14,7 @@
     <input type="text" id="username" placeholder="Nombre de usuario" />
     <input type="password" id="password" placeholder="Contraseña" />
     <button onclick="login()">Ingresar</button>
-    <p id="login-error"></p>
+    <p id="login-error" style="color: red;"></p>
   </div>
 
   <!-- Lobby -->
@@ -41,7 +41,8 @@
     <button onclick="cerrarSesion()">Cerrar sesión</button>
   </div>
 
+  <!-- Supabase y app.js -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <script src="app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
