@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    console.log("Usuario recibido:", data);
     currentUser = data;
     document.getElementById("login").style.display = "none";
     document.getElementById("lobby").style.display = "block";
