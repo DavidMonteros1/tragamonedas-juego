@@ -14,7 +14,7 @@ window.addEventListener('DOMContentLoaded', () => {
       .from("usuarios")
       .select("*")
       .eq("nombre_usuario", username)
-      .eq("contraseña", password)
+      .eq("contrasena", password)
       .single();
 
     if (error || !data) {
