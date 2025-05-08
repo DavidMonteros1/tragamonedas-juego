@@ -10,18 +10,15 @@ window.addEventListener('DOMContentLoaded', () => {
     const password = document.getElementById("password").value.trim();
     const errorDisplay = document.getElementById("login-error");
 
-    console.log("Intentando login con:", username, password);
-
     const { data, error } = await supabase
       .from("usuarios")
       .select("*")
       .eq("nombre_usuario", username)
-      .eq("contrasena", password)  // <-- Escrito a mano sin ñ
+      .eq("contrasena", password)
       .single();
 
     if (error || !data) {
       errorDisplay.textContent = "Usuario o contraseña incorrectos.";
-      console.error("Error en login:", error);
       return;
     }
 
@@ -89,16 +86,19 @@ window.addEventListener('DOMContentLoaded', () => {
       ? `Ganaste ${ganancia} fichas!`
       : `Perdiste ${fichasApostadas} fichas.`;
 
+    // Actualizar fichas del usuario
     await supabase
       .from("usuarios")
       .update({ fichas: currentUser.fichas })
-      .eq("id", currentUser.id);
+      .eq("codigo", currentUser.codigo);
 
+    // Insertar jugada
     await supabase.from("jugadas").insert({
-      usuario_id: currentUser.id,
+      codigo_usuario: currentUser.codigo,
       fichas_apostadas: fichasApostadas,
       fichas_ganadas: ganancia,
-      resultado: `${slot1} | ${slot2} | ${slot3}`
+      resultado: ganancia > 0 ? "ganó" : "perdió",
+      slots: `${slot1}|${slot2}|${slot3}`
     });
   };
 });
